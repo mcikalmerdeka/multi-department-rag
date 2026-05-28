@@ -16,7 +16,8 @@ from typing import List, Dict, Any
 
 from dotenv import load_dotenv
 import gradio as gr
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain.chat_models import init_chat_model
+from langchain_openai import OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.documents import Document
@@ -40,7 +41,7 @@ load_dotenv()
 QDRANT_PATH = "./qdrant_storage_knowledge_base"
 COLLECTION_NAME = "company_knowledge"
 EMBED_MODEL = "text-embedding-3-small"
-LLM_MODEL = "gpt-4o-mini"
+LLM_MODEL = "openai:gpt-5.4-nano"
 TOP_K = 5
 
 # =============================================================================
@@ -466,9 +467,13 @@ def get_embeddings() -> OpenAIEmbeddings:
     return OpenAIEmbeddings(model=EMBED_MODEL)
 
 
-def get_llm() -> ChatOpenAI:
+def get_llm():
     """Initialize ChatGPT LLM."""
-    return ChatOpenAI(model=LLM_MODEL, temperature=0)
+    return init_chat_model(
+        LLM_MODEL,
+        temperature=0,
+        reasoning_effort=None,
+    )
 
 
 def check_api_key() -> tuple[bool, str]:
