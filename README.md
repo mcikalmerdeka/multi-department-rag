@@ -14,6 +14,8 @@ pinned: false
 
 A demonstration of **metadata-filtering based access control** for a RAG (Retrieval-Augmented Generation) knowledge base.
 
+**Live Demo:** [Hugging Face Space](https://huggingface.co/spaces/mcikalmerdeka/multi-department-rag)
+
 ## Architecture
 
 **Single Collection with Metadata Filtering** (Recommended Approach)
