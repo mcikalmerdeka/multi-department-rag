@@ -1,3 +1,15 @@
+---
+title: Multi-Department Knowledge Base Demo
+emoji: 🏢
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: "5.0"
+python_version: "3.12"
+app_file: main.py
+pinned: false
+---
+
 # Multi-Department Knowledge Base Demo
 
 A demonstration of **metadata-filtering based access control** for a RAG (Retrieval-Augmented Generation) knowledge base.
