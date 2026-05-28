@@ -5,11 +5,11 @@ description = "Multi-Department Knowledge Base Demo with metadata-filtering acce
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "gradio",
-    "langchain",
-    "langchain-core",
-    "langchain-openai",
-    "langchain-qdrant",
-    "qdrant-client",
-    "python-dotenv",
+    "gradio>=6.14.0",
+    "langchain>=1.3.1",
+    "langchain-core>=1.4.0",
+    "langchain-openai>=1.2.2",
+    "langchain-qdrant>=1.1.0",
+    "python-dotenv>=1.2.2",
+    "qdrant-client>=1.18.0",
 ]
